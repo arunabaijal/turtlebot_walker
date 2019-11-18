@@ -50,6 +50,7 @@ Walker::Walker() {
   msg.angular.x = 0.0;
   msg.angular.y = 0.0;
   msg.angular.z = 0.0;
+  obstacle = false;
   pubVelocities.publish(msg);
 }
 
