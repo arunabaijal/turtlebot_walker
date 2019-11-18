@@ -90,9 +90,7 @@ void Walker::walk() {
       msg.angular.z = 0.0;
       msg.linear.x = linearVel;  // move forward
     }
-    
     pubVelocities.publish(msg);
-
     ros::spinOnce();
     loop.sleep();
   }
