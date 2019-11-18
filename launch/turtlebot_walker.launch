@@ -1,7 +1,7 @@
 <launch>
   <arg name="StartRec" default="false" />
-  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
-  <node pkg="turtlebot_walker" name="walker" type="walker" output="screen" launch-prefix="gnome-terminal --command""/>
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch"/>
+  <node pkg="turtlebot_walker" name="turtlebot_walker" type="turtlebot_walker" output="screen" launch-prefix="gnome-terminal --command"/>
   <node pkg="beginner_tutorials" name="listener" type="listener"/>
   <node pkg="rosbag" name="rosbag_record_all" type="record" respawn="true" output="screen" args="-a --output-name=$(find turtlebot_walker)/results/turtlebot_walker.bag -x /camera/(.*)" if="$(arg StartRec)"/>
 </launch>
